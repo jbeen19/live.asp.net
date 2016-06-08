@@ -133,3 +133,11 @@
     };
 
 })(window);
+
+function toLocal(id, date) {
+    var element = document.getElementById(id);
+    date = moment.utc(date, "YYYY-MM-DD HH:mm Z");
+    date.local();
+    var str = date.format("ddd MMM D YYYY h:mm a").toString()
+    element.appendChild(document.createTextNode(str));
+};
